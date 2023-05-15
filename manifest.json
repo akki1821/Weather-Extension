@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Weather Extension",
+    "description": "Displays real-time weather updates and forecasts",
+    "version": "1.0",
+    "icons": {
+        "16": "weather-app.png",
+        "48": "weather-app.png",
+        "128": "weather-app.png"
+    },
+    "permissions": [
+        "geolocation"
+    ],
+    "host_permissions": [
+        "http://api.openweathermap.org/*"
+    ],
+    "action": {
+        "default_icon": "weather-app.png",
+        "default_title": "Weather Extension",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["index.css"],
+            "js": ["index.js"]
+        }
+    ]
+}

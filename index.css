@@ -1,0 +1,104 @@
+
+/* Style for the weather information container */
+#weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 350px;
+}
+
+/* Style for the location text */
+#location {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#icon {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Style for the city text */
+#city {
+  
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+#location > #city {
+  font-size: 36px !important;
+}
+
+/* Style for the country text */
+#country {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for the weather icon */
+#icon img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* Style for the temperature text */
+#temperature {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Style for the weather description text */
+#description {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for additional weather information */
+#min-temp, #max-temp, #wind-speed, #humidity {
+  font-size: 16px;
+  margin-bottom: 5px;
+  
+}
+
+/* Style for separator line */
+.hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+#weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} 
+
+
+#weather-container {
+  /* existing styles */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

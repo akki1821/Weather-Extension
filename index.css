@@ -1,8 +1,10 @@
 
+
 /* Style for the weather information container */
 #weather-container {
   display: flex;
   justify-content: center;
+  overflow-y: auto;
   align-items: center;
   flex-direction: column;
   font-family: Arial, sans-serif;
@@ -10,15 +12,55 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 300px;
+  overflow-y: hidden;
+  border: 2px solid blue;
+}
+#location {
+  margin-top: -15px;
+}
+#weather h2 {
+  margin-bottom: 5px;
+}
+
+#location p,
+#weather p {
+  margin-top: 2.5px;
+  margin-bottom: 1px;
+}
+
+#approximate-location {
+  border: 2px solid red;
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+  color: red; /* Set the desired color for the message */
 }
 
 /* Style for the location text */
 #location {
-  font-size: 24px;
+  font-size: 20px;
+  width: 100%; 
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
+  color: rgb(33, 7, 163); /* Set the desired text color */
+  background-color: rgb(234, 234, 240); /* Set the background color for the location section */
+  padding: 10px; /* Adjust the padding as needed */
+  border-radius: 10px; /* Add border radius for rounded corners */
+}
+
+
+#weather {
+  display: flex;
+  width: 100%; 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -7px; /* Add some spacing between the icon and weather section */
+  background-color: rgb(20, 20, 172); /* Set the same background color as the icon */
+  padding: 10px; /* Adjust the padding as needed */
+  border-radius: 10px; /* Add border radius for rounded corners */
 }
 
 #icon {
@@ -29,19 +71,24 @@
 
 /* Style for the city text */
 #city {
-  
   font-weight: bold;
-  margin-bottom: 5px;
-  margin-top: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  top: -18px;
+  color: gray;
 }
+
 #location > #city {
   font-size: 36px !important;
 }
 
 /* Style for the country text */
 #country {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
+  position: relative;
+  top: -23px;
+ 
 }
 
 /* Style for the weather icon */
@@ -53,24 +100,56 @@
 
 /* Style for the temperature text */
 #temperature {
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 5px;
   text-align: center;
+  color: white;
 }
 
 /* Style for the weather description text */
 #description {
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 10px;
   text-align: center;
+  color: white;
 }
 
 /* Style for additional weather information */
 #min-temp, #max-temp, #wind-speed, #humidity {
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 14px;
+  position: relative;
+
+  top: -20px; /* Adjust the value as needed */ /* Adjust the negative margin value as needed */
+}
+
+#min-temp::before, #max-temp::before, #wind-speed::before, #humidity::before {
+  content: "";
+  display: none;
   
+}
+
+/* Style for the "Current Weather" text */
+#weather h2 {
+  margin-bottom: 5px;
+  color: white; /* Set the desired text color */
+}
+
+
+#min-temp {
+  color:white;
+}
+
+#max-temp {
+  color:white;
+}
+
+#wind-speed {
+  color:white;
+}
+
+#humidity {
+  color:white;
 }
 
 /* Style for separator line */
@@ -86,6 +165,12 @@
   flex-direction: column;
 } 
 
+#description {
+  font-size: 24px;
+  margin-bottom: -50px;
+}
+
+
 
 #weather-container {
   /* existing styles */
@@ -100,5 +185,37 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+#loading-message {
+  display: none;
+  font-size: 24px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }}
+
+  #city,
+#country {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

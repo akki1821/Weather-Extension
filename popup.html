@@ -9,11 +9,16 @@
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body>
+
+
     <div id="weather-container">
+      <div id="loading-message">Fetching weather data...</div>
+
       <div id="location">
         <h2>Current Location:</h2>
         <p id="city"></p>
         <p id="country"></p>
+        <p id="approximate-location" style="display: none;"></p>
       </div>
       <div id="weather">
         <h2>Current Weather:</h2>

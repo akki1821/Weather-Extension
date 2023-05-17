@@ -1,5 +1,3 @@
-
-
 /* Style for the weather information container */
 #weather-container {
   display: flex;
@@ -40,25 +38,32 @@
 /* Style for the location text */
 #location {
   font-size: 20px;
-  width: 100%; 
+  width: 100%;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
   color: rgb(33, 7, 163); /* Set the desired text color */
-  background-color: rgb(234, 234, 240); /* Set the background color for the location section */
+  background-color: rgb(
+    234,
+    234,
+    240
+  ); /* Set the background color for the location section */
   padding: 10px; /* Adjust the padding as needed */
   border-radius: 10px; /* Add border radius for rounded corners */
 }
 
-
 #weather {
   display: flex;
-  width: 100%; 
+  width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: -7px; /* Add some spacing between the icon and weather section */
-  background-color: rgb(20, 20, 172); /* Set the same background color as the icon */
+  background-color: rgb(
+    20,
+    20,
+    172
+  ); /* Set the same background color as the icon */
   padding: 10px; /* Adjust the padding as needed */
   border-radius: 10px; /* Add border radius for rounded corners */
 }
@@ -67,7 +72,6 @@
   display: flex;
   justify-content: center;
 }
-
 
 /* Style for the city text */
 #city {
@@ -88,7 +92,6 @@
   margin-bottom: 10px;
   position: relative;
   top: -23px;
- 
 }
 
 /* Style for the weather icon */
@@ -116,17 +119,22 @@
 }
 
 /* Style for additional weather information */
-#min-temp, #max-temp, #wind-speed, #humidity {
+#min-temp,
+#max-temp,
+#wind-speed,
+#humidity {
   font-size: 14px;
   position: relative;
 
   top: -20px; /* Adjust the value as needed */ /* Adjust the negative margin value as needed */
 }
 
-#min-temp::before, #max-temp::before, #wind-speed::before, #humidity::before {
+#min-temp::before,
+#max-temp::before,
+#wind-speed::before,
+#humidity::before {
   content: "";
   display: none;
-  
 }
 
 /* Style for the "Current Weather" text */
@@ -135,21 +143,20 @@
   color: white; /* Set the desired text color */
 }
 
-
 #min-temp {
-  color:white;
+  color: white;
 }
 
 #max-temp {
-  color:white;
+  color: white;
 }
 
 #wind-speed {
-  color:white;
+  color: white;
 }
 
 #humidity {
-  color:white;
+  color: white;
 }
 
 /* Style for separator line */
@@ -163,14 +170,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-} 
+}
 
 #description {
   font-size: 24px;
   margin-bottom: -50px;
 }
-
-
 
 #weather-container {
   /* existing styles */
@@ -195,11 +200,18 @@
 }
 
 @keyframes pulse {
-  0% { opacity: 0.4; }
-  50% { opacity: 1; }
-  100% { opacity: 0.4; }}
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
 
-  #city,
+#city,
 #country {
   font-size: 20px;
   font-weight: bold;

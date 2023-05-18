@@ -11,9 +11,14 @@ app.get('/weather', (req, res) => {
   const latitude = req.query.lat;
   const longitude = req.query.lon;
 
-  // Make API request to fetch weather data
-  const apiKey = "15f3924c615083852ae4bd2e08e025ec";
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+
+   // Make API request to fetch weather data
+   const apiKey = process.env.API_KEY;
+   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  // // Make API request to fetch weather data
+  // const apiKey = "15f3924c615083852ae4bd2e08e025ec";
+  // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
   // Dynamic import of node-fetch
   require('node-fetch').default(url)

@@ -4,9 +4,9 @@ window.onload = function () {
     console.log(`Longitude: ${longitude}`);
     document.getElementById("loading-message").style.display = "block";
 
-    const apiKey = "15f3924c615083852ae4bd2e08e025ec";
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
+    // const apiKey = "15f3924c615083852ae4bd2e08e025ec";
+    // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    const url = `/weather?lat=${latitude}&lon=${longitude}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {

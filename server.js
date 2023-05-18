@@ -6,6 +6,10 @@ const app = express();
 const port = 3000;
 
 app.use(express.static(__dirname));
+app.use((req, res, next) => {
+  res.setHeader('Permissions-Policy', 'interest-cohort=()');
+  next();
+});
 
 app.get('/weather', (req, res) => {
   const { lat, lon } = req.query;

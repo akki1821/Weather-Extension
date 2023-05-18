@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(__dirname));
 
 // Define API endpoint
 app.get('/weather', (req, res) => {
@@ -29,8 +29,8 @@ app.get('/weather', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/popup.html');
-  });
+  res.sendFile(__dirname + '/index.html');
+});
 
 // Start the server
 app.listen(port, () => {

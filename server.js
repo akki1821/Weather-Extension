@@ -16,14 +16,15 @@ app.use((req, res, next) => {
 
 app.get('/weather', (req, res) => {
   const { lat, lon } = req.query;
-  const apiKey = process.env.API_KEY; 
+  const apiKey = process.env.API_KEY;
   console.log(apiKey);
-// Reference GitHub Actions secret directly
+
   const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
+      console.log('Weather data:', data); // Add this line
       res.json(data);
     })
     .catch((error) => {

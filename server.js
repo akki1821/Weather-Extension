@@ -16,11 +16,11 @@ app.use((req, res, next) => {
 
 app.get('/weather', (req, res) => {
   const { lat, lon } = req.query;
-  
-  const apiKey = process.env.apiKey; // Use "apiKey" instead of "APIKEY"
+
+  const apiKey = process.env.APIKEY; // Use "apiKey" instead of "APIKEY"
   console.log(apiKey);
   
-  const url = `httpS://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
   fetch(url)
     .then((response) => response.json())

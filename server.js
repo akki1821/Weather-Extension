@@ -1,9 +1,12 @@
 // Server-side code
 const express = require('express');
 const fetch = require('node-fetch');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
+
+app.use(cors()); // Enable CORS
 
 app.use(express.static(__dirname));
 app.use((req, res, next) => {
@@ -13,8 +16,10 @@ app.use((req, res, next) => {
 
 app.get('/weather', (req, res) => {
   const { lat, lon } = req.query;
-  const apiKey = process.env.OPENWEATHERMAP_API_KEY; // Reference GitHub Actions secret directly
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  const apiKey = process.env.API_KEY; 
+  console.log(apiKey);
+// Reference GitHub Actions secret directly
+  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
   fetch(url)
     .then((response) => response.json())

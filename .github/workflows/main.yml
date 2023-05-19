@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   build:
@@ -14,6 +14,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up environment variables
-        run: echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+        run: echo "API_KEY=b3025235c339480a744e5fe52a84dc0d" >> $GITHUB_ENV
 
-      # Add more steps here for your build, test, and deployment process
+      # Add more steps for your build, test, and deployment process

@@ -3,11 +3,14 @@ window.onload = function () {
     console.log(`Latitude: ${latitude}`);
     console.log(`Longitude: ${longitude}`);
     document.getElementById("loading-message").style.display = "block";
-
+    // const apiKey = "184bc8f4ac7b3b16a2759726807f5285";
+    ; // Use "apiKey" instead of "APIKEY"
     // const apiKey = "15f3924c615083852ae4bd2e08e025ec";
     // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-    const url = `http://localhost:3000/weather?lat=${latitude}&lon=${longitude}`;
-    fetch(url)
+    // const url = `http://localhost:3000/weather?lat=${latitude}&lon=${longitude}`;
+    // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    fetch(`/weather?lat=${latitude}&lon=${longitude}`)
       .then((response) => response.json())
       .then((data) => {
         document.getElementById("loading-message").style.display = "none";
